@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "Sublime#96",
-    "database": "games_db",
+    "database": "gamelist",
     "host": "localhost",
     "dialect": "mysql"
   },
