@@ -2,23 +2,22 @@
   "development": {
     "username": "root",
     "password": "Sublime#96",
-    "database": "gamelist",
-    "host": "127.0.0.1",
-    "port": 3306,
+    "database": "games_db",
+    "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": null,
-    "database": "test_db",
+    "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "username": "f5d5b0aq516md4px",
+    "password": "s7ro2a1lgi6hui3q",
+    "database": "zqm6e057sn2nwgg7",
+    "host": "xq7t6tasopo9xxbs.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }
