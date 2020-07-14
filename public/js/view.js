@@ -56,7 +56,7 @@ $(document).ready(function () {
         "<li class='list-group-item game-item'>",
         "<span>",
         game.text,
-        // "<div class='rw-ui-container'></div>",
+        "<div class='rw-ui-container'></div>",
         "</span>",
 
         "<button class='delete btn btn-danger'>Sold It</button>",
