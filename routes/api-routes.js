@@ -1,56 +1,50 @@
-// *********************************************************************************
-// api-routes.js - this file offers a set of routes for displaying and saving data to the db
-// *********************************************************************************
-
-// Dependencies
-// =============================================================
-
-// Requiring our Todo model
+// Requiring our models and passport as we've configured it
 var db = require("../models");
+var passport = require("../config/passport");
 
-// Routes
-// =============================================================
 module.exports = function (app) {
-
-  // GET route for getting all of the todos
-  app.get("/api/games", function (req, res) {
-    // findAll returns all entries for a table when used with no options
-    db.Game.findAll({}).then(function (dbGame) {
-      // We have access to the todos as an argument inside of the callback function
-      res.json(dbGame);
-    });
+  // Using the passport.authenticate middleware with our local strategy.
+  // If the user has valid login credentials, send them to the members page.
+  // Otherwise the user will be sent an error
+  app.post("/api/login", passport.authenticate("local"), function (req, res) {
+    res.json(req.user);
   });
 
-  // POST route for saving a new todo
-  app.post("/api/games", function (req, res) {
-    console.log(req.body);
-    // create takes an argument of an object describing the item we want to
-    // insert into our table. In this case we just we pass in an object with a text
-    // and complete property (req.body)
-    db.Game.create({
-      text: req.body.text,
-      complete: req.body.complete
-    }).then(function (dbGame) {
-      // We have access to the new todo as an argument inside of the callback function
-      res.json(dbGame);
-
-    });
+  // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
+  // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
+  // otherwise send back an error
+  app.post("/api/signup", function (req, res) {
+    db.User.create({
+      email: req.body.email,
+      password: req.body.password
+    })
+      .then(function () {
+        res.redirect(307, "/api/login");
+      })
+      .catch(function (err) {
+        res.status(401).json(err);
+      });
   });
 
-  // DELETE route for deleting todos. We can get the id of the todo we want to delete from
-  // req.params.id
-  app.delete("/api/games/:id", function (req, res) {
-    db.Game.destroy({
-      where: {
-        id: req.params.id
-      }
-    }).then(function (dbGame) {
-      res.json(dbGame);
-    });
-
+  // Route for logging user out
+  app.get("/logout", function (req, res) {
+    req.logout();
+    res.redirect("/");
   });
 
-
-
-
+  // Route for getting some data about our user to be used client side
+  app.get("/api/user_data", function (req, res) {
+    if (!req.user) {
+      // The user is not logged in, send back an empty object
+      res.json({});
+    } else {
+      // Otherwise send back the user's email and id
+      // Sending back a password, even a hashed password, isn't a good idea
+      res.json({
+        email: req.user.email,
+        id: req.user.id
+      });
+    }
+  });
 };
+

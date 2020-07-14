@@ -1,82 +1,83 @@
 .todo-list {
-  margin: 0 auto;
-  margin-top: 75px;
-}
-
-input.new-item:focus {
-  outline: none;
-}
-
-.list-group-item > button.delete,
-.list-group-item > button.complete {
-  float: right;
-  height: 25px;
-  margin-left: 5px;
-}
-
-.edit {
-  width: 50%;
-}
-
-form.signup,
-form.login {
-  margin-top: 50px;
-}
-
-body {
-  background-color: black;
-  background-image: url("../assets/images/retro-gaming-08.png");
-  background-repeat: contain;
-  background-size: 100%;
-  font: black;
+    margin: 0 auto;
+    margin-top: 75px;
+  }
   
+  input.new-item:focus {
+    outline: none;
+  }
+  
+  .list-group-item > button.delete,
+  .list-group-item > button.complete {
+    float: right;
+    height: 25px;
+    margin-left: 5px;
+  }
+  
+  .edit {
+    width: 50%;
+  }
+  
+  form.signup,
+  form.login {
+    margin-top: 50px;
+  }
+  
+  body {
+    background-color: black;
+    background-image: url("../assets/images/retro-gaming-08.png");
+    background-repeat: contain;
+    background-size: 100%;
+    font: black;
+    
+     
+  }
+  
+  .navbar-brand {
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    font-size: 35px;
+  }
+  
+  .font2 { 
+    color: white;
+    border-style:solid;
+    border-width:1px;  
+    border-color: rgb(237, 245, 123);
+    background: linear-gradient(rgb(11, 62, 109), rgb(174, 184, 40));
+    font-family: 'Orbitron', sans-serif;
+  }
+  
+  .navbar {
+    border-style:solid;
+    border-width:1px;  
+    border-color: rgb(237, 245, 123);
+    background: linear-gradient(rgb(11, 62, 109), rgb(174, 184, 40));
+    font-family: 'Orbitron', sans-serif;
+    padding: 5px 20px 5px 20px; 
    
-}
-
-.navbar-brand {
-  font-family: 'Orbitron', sans-serif;
-  color: white;
-  font-size: 35px;
-}
-
-.font2 { 
-  color: white;
-  border-style:solid;
-  border-width:1px;  
-  border-color: rgb(237, 245, 123);
-  background: linear-gradient(rgb(11, 62, 109), rgb(174, 184, 40));
-  font-family: 'Orbitron', sans-serif;
-}
-
-.navbar {
-  border-style:solid;
-  border-width:1px;  
-  border-color: rgb(237, 245, 123);
-  background: linear-gradient(rgb(11, 62, 109), rgb(174, 184, 40));
-  font-family: 'Orbitron', sans-serif;
-  padding: 5px 20px 5px 20px; 
- 
-}
-
-h2 {
-  color: black;
-  border-style: solid;
-  background: white;
-  padding: 5px;
-}
-
-.font {
-  color: white;
-  border-style:solid;
-  border-width:1px;  
-  border-color: rgb(237, 245, 123);
-  background: linear-gradient(rgb(11, 62, 109), rgb(174, 184, 40));
-  font-family: 'Orbitron', sans-serif;
-}
-
-
-
-.tiny_text {
-  font-size: 11px;
-  color: #5da82f;
-}
+  }
+  
+  h2 {
+    color: black;
+    border-style: solid;
+    background: white;
+    padding: 5px;
+  }
+  
+  .font {
+    color: white;
+    border-style:solid;
+    border-width:1px;  
+    border-color: rgb(237, 245, 123);
+    background: linear-gradient(rgb(11, 62, 109), rgb(174, 184, 40));
+    font-family: 'Orbitron', sans-serif;
+  }
+  
+  
+  
+  .tiny_text {
+    font-size: 11px;
+    color: #5da82f;
+  }
+  
