@@ -30,6 +30,7 @@ $(document).ready(function () {
     })
       .then(function () {
         window.location.replace("//salty-citadel-10580.herokuapp.com/index");
+        response.end();
         // If there's an error, log the error
       })
       .catch(function (err) {
